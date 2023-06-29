@@ -1,0 +1,52 @@
+h1,
+p {
+  font-family: Lato;
+}
+
+.navbar {
+  background-color: blue;
+  height: 60px;
+  color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+.navbar-links {
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bar-section {
+  display: flex;
+  flex-direction: column;
+  height: 35vh;
+  background-color: black;
+  justify-content: center;
+  align-items: center;
+  color: wheat;
+}
+
+.search-bar {
+  height: 30px;
+  width: 300px;
+  border-radius: 5px;
+  border: none;
+  font-size: 12px;
+  outline: none;
+  padding: 5px;
+  /* background-image: url('https://th.bing.com/th/id/OIP.YC72S8MaYvnr1SPZf8nzaQHaHa?pid=ImgDet&rs=1');
+  background-repeat: no-repeat;
+  background-position: 5px;
+  background-color: white;
+  background-size: 15px; */
+}
+
+.links {
+  padding: 10px;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}

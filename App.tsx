@@ -13,6 +13,7 @@ const App: React.FC = () => {
   const [ticket, setTicket] = useState<string>('');
   const [orders, setOrders] = useState<myObject[]>([]);
   const [totals, setTotals] = useState<number[]>([]);
+  const [sum, setSum] = useState<number>(null)
   const quantityAdd = (event: React.MouseEvent<HTMLButtonElement>) => {
     setQuantity(quantity + 1);
   };
@@ -39,6 +40,14 @@ const App: React.FC = () => {
     setTotals(totalsarray);
   };
 
+  React.useEffect(() => {
+    const sum = totals.reduce((accumulator, currentValue) => {
+      return accumulator + currentValue
+    }, 0)
+
+    setSum(sum)
+  }, [totals])
+
   console.log(totals);
 
   return (
@@ -64,7 +73,7 @@ const App: React.FC = () => {
           </button>
         </div>
       ))}
-      <p></p>
+      <p>Total order: {sum}</p>
     </div>
   );
 };

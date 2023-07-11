@@ -1,6 +1,7 @@
 import * as React from 'react';
 import './style.css';
 import { useState } from 'react';
+import Cart from './cart-outline.svg';
 
 const App: React.FC = () => {
   interface myObject {
@@ -13,7 +14,7 @@ const App: React.FC = () => {
   const [ticket, setTicket] = useState<string>('');
   const [orders, setOrders] = useState<myObject[]>([]);
   const [totals, setTotals] = useState<number[]>([]);
-  const [sum, setSum] = useState<number>(null)
+  const [sum, setSum] = useState<number>(null);
   const quantityAdd = (event: React.MouseEvent<HTMLButtonElement>) => {
     setQuantity(quantity + 1);
   };
@@ -42,11 +43,11 @@ const App: React.FC = () => {
 
   React.useEffect(() => {
     const sum = totals.reduce((accumulator, currentValue) => {
-      return accumulator + currentValue
-    }, 0)
+      return accumulator + currentValue;
+    }, 0);
 
-    setSum(sum)
-  }, [totals])
+    setSum(sum);
+  }, [totals]);
 
   console.log(totals);
 
@@ -74,6 +75,7 @@ const App: React.FC = () => {
         </div>
       ))}
       <p>Total order: {sum}</p>
+      <button className="button"><img src = {Cart} className = 'cart-icon'/> {orders.length}</button>
     </div>
   );
 };
